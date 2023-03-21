@@ -70,7 +70,7 @@ Lancer le projet / api :
 ## Auteurs 👑
 
 - [Oliwer Skweres](https://www.github.com/SwerkF) 
-- [Esteban Soufflard](https://www.github.com/Este27)
+- [Esteban Soufflard](https://www.github.com/Este027)
 - [Thomas Letellier](https://github.com/thomasl28500)
 - [Clément Duchene](https://github.com/duchenec-coder)
 
