@@ -19,11 +19,11 @@ app.use((req, res, next) => {
 
 app.get('/', function(req, res)  {
     res.setHeader('Content-Type', 'text/html' );
-    res.status(200).send(' <a href="/missions/liste">Voir la liste des missions </a>');
+    res.status(200).send('<h1>Bienvenue dans l\'API.</h1>');
 })
 
 app.use('/api/', apiRouter);
 
 app.listen(3300, function() {
-    console.log('Serveur lancé sur le port 3300');
+    console.log('Serveur lancé sur le port 3000');
 })

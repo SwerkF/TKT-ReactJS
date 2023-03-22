@@ -1,5 +1,5 @@
-import FormulaireAjout from "./pages/formulaireAjout";
-import Liste from "./pages/liste";
+import FormulaireAjout from "./pages/missions/formulaireAjout";
+import Liste from "./pages/missions/liste";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 
 
