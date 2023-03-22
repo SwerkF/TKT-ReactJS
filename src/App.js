@@ -1,25 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import FormulaireAjout from "./pages/formulaireAjout";
+import Liste from "./pages/liste";
+import { BrowserRouter,Routes,Route } from "react-router-dom";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  <BrowserRouter>
+  <Routes>
+   <Route path="/liste" element={<Liste/>}></Route>
+   <Route path="/formulaire" element= {<FormulaireAjout/>}>
+   </Route>
+   <Route path="/form" element={<Form/>}></Route>
+   </Routes>
+  </BrowserRouter>
+    
   );
 }
-
 export default App;
