@@ -1,0 +1,100 @@
+body{
+    background-image: url("http://localhost:3300/api/src/images/fond-encyclopedie.png");
+    height: 100%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+div.page{
+    height: 100%;
+}
+
+h1 {
+    color : white;
+    -webkit-text-stroke: 2px #FFB349;
+    text-align: center;
+    font-size: 80px;
+    margin-top: 400px;
+}
+
+h2 {
+    color : white;
+    text-align: center;
+    font-size: 60px;
+    margin-bottom: 400px;
+}
+
+hr{
+    border: 3px solid #FFB349;
+}
+
+.container {
+    max-width: 1780px !important;   /* largeur maximale de la page */
+    margin-bottom: 50px;
+}
+
+div.img_animal{
+    background-color: #FFB349;
+    border-radius: 20px;
+    display: grid;  /* mise en grille */
+    gap: 5px;   /* espace entre les colonnes */
+    grid-template-columns:33% 33% 33%;  /* 3 colonnes de même taille */
+}
+
+img {
+    aspect-ratio: 3/2;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    border: 5px solid white;
+}
+
+.card:hover .image{
+    opacity: .3;
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+  
+.overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+}
+  
+.card:hover .overlay {
+    opacity: 1;
+}
+  
+.card {
+    background-color: transparent;
+    border: none;
+}
+
+.text {
+    font-weight: bold;
+    color: #880000;
+    font-size: 3vw;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.overlay{
+    opacity: 0;
+}
