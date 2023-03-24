@@ -1,0 +1,61 @@
+body {
+    background-image: url("https://images.hdqwalls.com/download/zoo-leopard-1920x1080.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.card-margin {
+    margin-top: 8em;
+}
+
+.img-40vw {
+    width: 17em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card {
+    height: 40em;
+    border-radius: 20px;
+}
+
+.card-header {
+    padding-bottom: 5%;
+    background-color: #ffffff;
+    border-radius: 20px 20px 0px 0px !important;
+}
+
+.flex-cred {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.label {
+    font-weight: 700;
+    font-size: 1.2em;
+    color: #704837;
+}
+
+.input[type="text"], .input[type="password"] {
+    border: 2px solid #ffdecf;
+    border-radius: 5px;
+    padding: 0.5em;
+    width: 100%;
+    background-color: #fff4e5;
+    font-weight: 600;
+}
+
+.btn-brown {
+    margin-top: 30px;
+    background-color: #704837;
+    color: #fffaf3;
+    border: 2px solid #704837;
+    border-radius: 5px;
+    padding: 0.5em;
+    width: 7em;
+    font-weight: 700;
+    font-size: 1.2em;
+}
