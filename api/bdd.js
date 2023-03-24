@@ -3,7 +3,7 @@ const  mysql=require('mysql');
 const connexion=mysql.createConnection({
 host:'localhost',
 user:'root',
-database:'',
+database:'zoo',
 port:'3306'
 });
 
