@@ -2,36 +2,27 @@ import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 
 const liste=()=>{
-    const[data,setData]=useState([]);
+    const [data,setData]=useState([]);
       useEffect(()=>{
-        axios.get("http://localhost:3300/liste").then((response)=>{
-          console.log(response.data.results);
-          setData(response.data.results);
+        axios.get("http://localhost:3300/api/missions/liste").then((response)=>{
+          setData(response.data.result);
       })
       },[]);
-      return(
-          <table>
-              <h1>Voici la liste des missions</h1>
-              <th>
-                  <tr>Libelle</tr>
-                  <tr>Commentaire</tr>
-                  <tr>Date</tr>
-    
-              </th>
+         
+      return(<div>
+          <h1>Veuillez consulter la liste des missions </h1>
           <ul>
-           {data.map((d,index)=>(
-            <li key={index}>
-                {d.libelleMission} <br />
-                {d.commentaireMission} <br />
-                {d.dateMission} <br />
-                
-               
+           {data.map((d,idMission)=>(
+            <li key={idMission}>
+                <p><a href="/detail" >{d.libelleMission} </a></p><br />
+                <p><a href="/suppression">Suppression de la mission n°{d.idMission}</a></p>
             </li>
            ))}
           </ul>
-          <a href="/formulaire">Ajouter une mission</a><br/>
+          <a href="/formulaire">Ajouter une nouvelle mission</a><br/>
           
-</table>)};
-  
+
+      </div>);
+}
 
 export default liste;

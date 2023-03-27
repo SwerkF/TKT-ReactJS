@@ -13,7 +13,8 @@ exports.router = (function() {
     
     //Missions
     apiRouter.route('/missions/liste').get(Mission.getMission);
-    apiRouter.route('/missions/one/:id').get(Mission.getMissionById);
+    apiRouter.route('/missions/byId').get(Mission.getMissionById);
+    apiRouter.route('/missions/insert').post(Mission.insertMission);
 
      //Advert
     apiRouter.route('/advert/register/').post(avertissement.id);
