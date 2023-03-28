@@ -14,6 +14,23 @@ const Encyclopedie = () => {
         })
     },[])
 
+    const handleChangeOrdre = (event) => {
+        let array = [];
+        if(event.target.value == "a_z"){
+            data.forEach((item) => {
+                array.push(item);
+            })
+            array.sort((a, b) => (a.libelleRace > b.libelleRace) ? 1 : -1);
+            setData(array);
+        }else if(event.target.value == "z_a"){
+            data.forEach((item) => {
+                array.push(item);
+            })
+            array.sort((a, b) => (a.libelleRace < b.libelleRace) ? 1 : -1);
+            setData(array);
+        }
+    }
+
     const liItem = document.querySelectorAll('ul li');
     const imgItem = document.getElementsByTagName('img');
 
@@ -55,17 +72,22 @@ const Encyclopedie = () => {
                         <li>Carnivore</li>
                         <li>Omnivore</li>
                         <li>Herbivore</li>
-                    </ul>
+                        <select className="form-select" aria-label="Default select example" onChange={handleChangeOrdre}>
+                            <option value="a_z">De A à Z</option>
+                            <option value="z_a">De Z à A</option>
+                        </select>
+                    </ul>                   
                 </div>
                 <div className="row img_animal">                       
-                            {data.map((item) => (
-                                <div className="col-sm card" id={item.idRace} key={item.idRace} name={item.libelleRace}>
-                                    <a href={"/animal?"+item.libelleRace}><img className="image" id={item.libelleRace} src={"http://localhost:3300/api/src/images/"+item.libelleImage} name={item.libelle}></img>
-                                    <div className='overlay'>
-                                        <div className="text">{item.libelleRace}</div>
-                                    </div></a>
+                    {data.map((item) => (
+                        <div className="col-sm card" id={item.idRace} key={item.idRace} name={item.libelleRace}>
+                            <a href={"/animal?"+item.libelleRace}><img className="image" id={item.libelleRace} src={"http://localhost:3300/api/src/images/"+item.libelleImage} name={item.libelle}></img>
+                                <div className='overlay'>
+                                    <div className="text">{item.libelleRace}</div>
                                 </div>
-                            ))}                    
+                            </a>
+                        </div>
+                    ))}                    
                 </div>
             </div>
         </div>
