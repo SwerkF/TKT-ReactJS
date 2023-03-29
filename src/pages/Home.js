@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Home.css'
+import './Home.scss'
 import CardAcceuil from '../components/CardAccueil';
 
 const Home = (props) => {
@@ -17,13 +17,13 @@ const Home = (props) => {
         <div className="page-home d-flex align-items-center">
             <div className="container">
                 <div className="row  justify-content-around">
-                    <div className="col-sm mt-5">
+                    <div className="col-sm pb-5 mt-1">
                         <CardAcceuil page="encyclopedie" title="Encyclopédie" text="Page permettant d'accéder à la liste des animaux du zoo. Vous y retrouverez des informations cruciales." link="/encyclopedie" src="https://cdn-images.zoobeauval.com/tezSQU1qf_1CirojEl3JB0VZRVU=/800x600/https%3A%2F%2Fs3.eu-west-3.amazonaws.com%2Fimages.zoobeauval.com%2F2020%2F06%2Flion2-5ee39badf0e85.jpg"/>
                     </div>
-                    <div className="col-sm mt-5">
+                    <div className="col-sm pb-5 mt-1">
                         <CardAcceuil page="missions" title="Missions" text="Retrouvez ici toutes vos missions en cours ainsi que celle qui ne sont pas encore commencées." link="/missions" src="https://cdn-images.zoobeauval.com/J6i95lPSlqM5IBtaAb3WdiREwgE=/1600x950/https%3A%2F%2Fs3.eu-west-3.amazonaws.com%2Fimages.zoobeauval.com%2F2020%2F06%2Fheader-7-5ef06597df3db.jpg"/>
                     </div>
-                    <div className="col-sm mt-5">
+                    <div className="col-sm pb-5 mt-1">
                         {admin}
                     </div>
                 

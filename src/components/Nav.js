@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import './Nav.css';
+import './Nav.scss';
 import logo from '../logo.svg';
 
 const Nav = (props) => {
@@ -15,7 +15,7 @@ const Nav = (props) => {
        
         console.log(user)
         return (
-            <div>
+            <div className="comp-nav">
                 <nav class="navbar navbar-expand-sm navbar-dark bg-orange text-brown">
                 <a class="navbar-brand" href="/home"><img src={logo} alt="logo.png"></img></a>
                 <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
