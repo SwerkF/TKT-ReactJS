@@ -1,0 +1,47 @@
+.page-mission {
+    background-image: url("http://localhost:3300/api/src/images/fond-mission-user.jpg");
+    height: 92vh;; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+
+    .container {
+        max-width: 1780px !important;
+        margin-bottom: 50px;
+    }
+    
+    .card{
+        margin-top: 10%;
+        background-color: #FFB349;
+        border-radius: 0.5em;
+    
+    }
+    
+    .bg-orange{
+        background-color: #FFA000;
+        border-radius: 1em;
+        
+    }
+    
+    .btn-valid{
+        background-color: #008854;
+        border-radius: 0.5em;
+        color :white;
+        width: 70%;
+    }
+    
+    .btn-danger{
+        border-radius: 0.5em;
+        color :white;
+        width: 70%;
+    }
+    
+    .btn-commencer{
+        background-color: #008854;
+        border-radius: 0.5em;
+        color :white;
+        width: 70%;
+    }
+}

@@ -16,13 +16,13 @@ app.use((req, res, next) => {
     next()
 });
 
-
 app.get('/', function(req, res)  {
     res.setHeader('Content-Type', 'text/html' );
     res.status(200).send('<h1>Bienvenue dans l\'API.</h1>');
 })
 
 app.use('/api/', apiRouter);
+app.use('/api/src/images/', express.static('src/images'));
 
 app.listen(3300, function() {
     console.log('Serveur lancé sur le port 3000');
