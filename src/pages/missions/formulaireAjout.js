@@ -9,19 +9,16 @@ const FormulaireAjout=()=>{
  
     // Ajouter une nouvelle mission
     const Add=(libelle, commentaire, date, idEtatMission,idUser)=>{
-        console
+    
         axios.post('http://localhost:3300/api/missions/insert', {
             libelleMission: libelle,
             commentaireMission: commentaire,
             dateMission: date,
             idEtatMission: idEtatMission ,
             idUserMission: idUser
-
-
         }).then((rep) => {
         })
     }
-    
         //affichage
     return(<div>
         <h1>Veuillez remplir les champs suivants </h1>

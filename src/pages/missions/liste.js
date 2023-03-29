@@ -14,9 +14,14 @@ const liste=()=>{
           <ul>
            {data.map((d,idMission)=>(
             <li key={idMission}>
-                <p><a href="/detail" >{d.libelleMission} </a></p><br />
+                <p>{d.libelleMission}</p>
+                <p><b>Commentaire :</b> {d.commentaireMission}</p>
+                <p><b>Etat de la mission :</b> {d.libelleEtat}</p>
+                <p><b>Date de la mission :</b> {d.dateMission}</p>
                 <p><a href="/suppression">Suppression de la mission n°{d.idMission}</a></p>
+                <p>--------------------</p>
             </li>
+
            ))}
           </ul>
           <a href="/formulaire">Ajouter une nouvelle mission</a><br/>

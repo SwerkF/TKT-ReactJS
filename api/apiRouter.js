@@ -13,11 +13,13 @@ exports.router = (function() {
     
     //Missions
     apiRouter.route('/missions/liste').get(Mission.getMission);
-    apiRouter.route('/missions/byId').get(Mission.getMissionById);
     apiRouter.route('/missions/insert').post(Mission.insertMission);
+    apiRouter.route('/missions/suppression').post(Mission.deleteMission);
 
      //Advert
-    apiRouter.route('/advert/register/').post(avertissement.id);
+    apiRouter.route('/avertissements/listeAlert').get(avertissement.getAvertissement);
+    apiRouter.route('/avertissements/insert').post(avertissement.insertAlert);
+    apiRouter.route('/avertissements/delete').post(avertissement.deleteAlert);
 
     return apiRouter;
 })();

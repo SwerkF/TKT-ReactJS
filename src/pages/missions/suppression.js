@@ -9,7 +9,7 @@ const suppression=()=>{
     // Ajouter une nouvelle mission
     const Delete=(idMission)=>{
         
-        axios.delete('http://localhost:3300/api/missions/delete', {
+        axios.delete('http://localhost:3300/api/missions/delete/'+idMission, {
             idMission: idMission
 
 
@@ -19,9 +19,11 @@ const suppression=()=>{
     
         //affichage
     return(<div>
-        <h1>Etes vous sûr de supprimer le commentaire n°?</h1>
-        <button onClick={()=>Delete(idMission)}> Supprimer la mission</button>
+         <form action="submit" >
+        <h1>Etes vous sûr de supprimer le commentaire ?</h1>
+        <button onClick={()=>Delete(idMission)}type="submit"> Supprimer la mission</button>
         <a href="/liste">Retour à la liste des missions</a>
+        </form>
         </div>);
         
     }

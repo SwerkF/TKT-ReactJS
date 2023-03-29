@@ -2,7 +2,7 @@ const db = require('../bdd.js')
 
 module.exports = {
   getMission: function(req, res) {
-    db.query("SELECT idMission, libelleMission FROM missions", function(err,result) {
+    db.query("SELECT idMission, libelleMission,dateMission, commentaireMission, libelleEtat FROM missions  join etat on idEtat=idEtatMission", function(err,result) {
       if(err) throw err;
       res.json({
         result
@@ -10,19 +10,7 @@ module.exports = {
     })
  },
 
- getMissionById: function(req, res) {
-  let id = req.query.id;
-   db.query("Select libelleMission, commentaireMission, dateMission, libelleEtat from missions join etat on idEtat=idEtatMission where idMission =?",[id], function(err,results){
-    
-  if(!results){
-    res.json({ message: "Aucune mission n'existe pas à cet identifiant" });
-  } else {
-    res.json({
-      data:results
-    });
-  }
-})
-   },
+ 
  
  insertMission: function(req, res){
   console.log(req.body)
@@ -31,7 +19,7 @@ module.exports = {
   let date = req.body.dateMission;
   let idEtat = req.body.idEtatMission;
   let idUser = req.body.idUserMission;
-  db.query("INSERT INTO missions(libelleMission, commentaireMission, dateMission, idEtatMission, idUserMission)  VALUES(?,?,?,?,?)",[libelle, commentaire, date, idEtat, idUser],function(err,result){
+  db.query("INSERT INTO missions(libelleMission, commentaireMission, dateMission, idEtatMission, idUserMission)  VALUES(?,?,?,?,?) ",[libelle, commentaire, date, idEtat, idUser],function(err,result){
        if(err){
         res.json({ message: "Echec de l'ajout de la nouvelle mission",
        data:result});
