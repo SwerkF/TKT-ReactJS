@@ -1,21 +1,21 @@
 .page-admin {
     background: #f0f0f5;
-    min-height: 100vh;
+    min-height: 92vh;
     background-image: url("https://cdn-images.zoobeauval.com/90QH1Cs9igJmliUeIctAYzW_6Rw=/1600x950/https%3A%2F%2Fs3.eu-west-3.amazonaws.com%2Fimages.zoobeauval.com%2F2021%2F04%2Fsaga-pandas-header-606dcfbed5911.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
 
+    .container {
+        max-width: 1780px !important;
+    }
+    
+    .width-10 .card{
+        margin-left: auto !important;
+        margin-right: auto !important;
+        max-width: 550PX !important;
+    }
+
 }
 
-
-.container {
-    max-width: 1780px !important;
-  }
-  
-.width-10 .card{
-    margin-left: auto !important;
-    margin-right: auto !important;
-    width: 70% !important;
-}
