@@ -6,11 +6,12 @@ import Nav from './components/Nav';
 import Admin from './pages/Admin'
 import Accounts from './pages/Accounts'
 import MissionAccueil from './pages/MissionAccueil';
+import Encyclopedie from './pages/Encyclopedie';
+import Animal from './pages/Animal';
 
 function App() {
 
   return (
-      
       <BrowserRouter>
         <Nav />
         <Routes>
@@ -19,9 +20,11 @@ function App() {
         <Route path="/missionAccueil" element={<MissionAccueil/>} />
           <Route path="/administration" element={<Admin />} />
           <Route path="/administration/accounts" element={<Accounts />} />
-        </Routes>
-      </BrowserRouter>
-  )
+        <Route path="/encyclopedie" element={<Encyclopedie/>}></Route> {/* route vers page encyclopedie */}
+        <Route path="/animal" element={<Animal/>}></Route> {/* route vers page animal */}
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
