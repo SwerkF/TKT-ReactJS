@@ -26,21 +26,19 @@ const Animals = (props) => {
     }
 
     return (
-        <div className="page-animals">
+        <div className="page-animals pt-5">
             <div className="container">
-                <div className="row">
-                    <div className="col-12">
-                        <h1 className="text-center">Gestion des animaux</h1>
-                        <div className="row">
-                            {animals.map((item, index) => {
-                                return (
-                                    <div key={index} className="col-4">
-                                        <CardAnimal nom={item.nomAnimal} poids={item.poidsAnimal} src={"https://dummyimage.com/640x360/fff/aaa"} idSante={item.idSante} race={item.libelleRace} enclos={item.libelleEnclos} sante={sante}></CardAnimal>
-                                    </div>
-                                    
-                                )
-                            })}
-                        </div>
+                <div className="background bg-orange p-5">
+                    <h1 className="text-center">Gestion des animaux</h1>
+                    <div className="row">
+                        {animals.map((item, index) => {
+                            return (
+                                <div key={index} className="col">
+                                    <CardAnimal idAnimal={item.idAnimal} nom={item.nomAnimal} poids={item.poidsAnimal} src={"http://localhost:3300/api/src/images/"+item.libelleImage} idSanteAnimal={item.idSanteAnimal} race={item.libelleRace} enclos={item.libelleEnclos} sante={sante}></CardAnimal>
+                                </div>
+                                
+                            )
+                        })}
                     </div>
                 </div>
             </div>

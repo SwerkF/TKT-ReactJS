@@ -1,22 +1,28 @@
 .page-animals {
     background: #f0f0f5;
-    min-height: 92vh;
+    min-height: 100%;
     background-image: url("https://static.actu.fr/uploads/2017/07/raccoon-844933_960_720-960x640.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-
+      
     .container {
         max-width: 1780px !important;
-      }
-      
+      }  
+
+    .bg-orange {
+        background-color: #FFC107;
+        //fit content
+        min-height: 100%;
+    }
+
     .width-10 .card{
         margin-left: auto !important;
         margin-right: auto !important;
         max-width: 550PX !important;
     }
+
+
     
 }
-
-

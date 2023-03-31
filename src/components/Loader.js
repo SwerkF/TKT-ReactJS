@@ -29,7 +29,7 @@ const LoaderWrapper = styled.div`
 const Loader = () => {
   return (
     <LoaderWrapper delay={400}>
-      <div class="loader"></div>
+      <div className="loader"></div>
     </LoaderWrapper>
   );
 };

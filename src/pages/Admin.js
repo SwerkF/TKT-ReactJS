@@ -6,7 +6,8 @@ const Admin = (props) => {
     useEffect(() => {
         document.title = "Administration";
         if(!localStorage.getItem('user')) {
-            window.location.href = "/";
+           
+            
         }
     })
     return (

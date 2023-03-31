@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import Nav from './components/Nav';
 import Admin from './pages/Admin'
 import Accounts from './pages/Accounts'
+import Animals from './pages/Animals'
 import MissionAccueil from './pages/MissionAccueil';
 import Loader from './components/Loader';
 import {useState, useEffect} from 'react';
@@ -34,6 +35,7 @@ function App() {
         <Route path="/missionAccueil" element={<MissionAccueil/>} />
           <Route path="/administration" element={<Admin />} />
           <Route path="/administration/accounts" element={<Accounts />} />
+          <Route path="/administration/animals" element={<Animals />} />
         </Routes>
       </BrowserRouter>
   )

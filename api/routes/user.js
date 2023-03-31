@@ -7,6 +7,7 @@ module.exports = {
     },
     login: function(req, res) {
 
+        
         //take parameter login & password from url
         let login = req.query.login;
         let password = req.query.password;
