@@ -1,17 +1,19 @@
-import React, {useState} from 'react';
+import React, {useEffect} from 'react';
 import './Home.scss'
 import CardAcceuil from '../components/CardAccueil';
 
 const Home = (props) => {
 
-    if(!localStorage.getItem('user')) {
-        window.location.href = "/";
-    }
-
-    let admin = null;
+    let admin = <></>;
     if(JSON.parse(localStorage.getItem('user')).libelleRole === "admin") {
         admin = <CardAcceuil title="Administration" text="Panneau administratif pour du site. Ajoutez y des missions, contrôlez les alertes et bien plus encore." link="/administration" src="https://www.wwf.org.au/images/carousel/3a413e04-d0d7-4df7-9d19-7b94b71b08f1_img-a-portrait-of-a-giant-panda-china-1000px.jpg" />
     }
+    useEffect(() => {
+        document.title = "Accueil";
+        if(!localStorage.getItem('user')) {
+            window.location.href = "/";
+        }
+    },[])
 
     return (
         <div className="page-home d-flex align-items-center">

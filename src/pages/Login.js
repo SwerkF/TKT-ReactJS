@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import LoginForm from '../components/LoginForm';
 import './Login.scss'
 import logo from '../logo.svg';
 
 const Login = (props) => {
 
-
-    if(localStorage.getItem('user')) {
-        window.location.href = "/home";
-    }
+    useEffect(() => {
+        document.title = "Connexion";
+        if(localStorage.getItem('user')) {
+            window.location.href = "/home";
+        }
+    },[])
 
     return (
         <div className="page-login pt-5">
