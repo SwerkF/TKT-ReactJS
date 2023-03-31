@@ -82,7 +82,7 @@ const Encyclopedie = () => {
                     <div className="row img_animal">                       
                         {data.map((item) => (
                             <div className="col-sm card" id={item.idRace} key={item.idRace} name={item.libelleRace}>
-                                <a href={"/animal?race="+item.libelleRace}><img className="image" id={item.libelleRace} src={"http://localhost:3300/api/src/images/"+item.libelleImage} name={item.libelle}></img>
+                                <a href={"/animal?idRace="+item.idRace}><img className="image" id={item.libelleRace} src={"http://localhost:3300/api/src/images/"+item.libelleImage} name={item.libelle}></img>
                                     <div className='overlay'>
                                         <div className="text">{item.libelleRace}</div>
                                     </div>

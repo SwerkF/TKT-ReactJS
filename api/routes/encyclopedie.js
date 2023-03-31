@@ -6,5 +6,28 @@ module.exports = {
             if (err) throw err;
             res.json(result);
         });
+    },
+
+    getAnimalById: function(req, res) {
+        db.query(
+            'SELECT R.libelleRace, R.description, R.tempsPorte, R.poids, A.libelle, R.origine, R.taille FROM race R INNER JOIN alimentation A on A.id = R.idAlimentation WHERE R.idRace = ?',
+            [req.query.id],
+            function (err, rows, fields) {
+              if (err) throw err
+              res.json(rows)
+            },
+          )
+    },
+
+    getImageAnimalById: function(req, res) {
+        console.log('getImageAnimalById')
+        db.query(
+            'SELECT idImage, libelleImage FROM image WHERE idRaceImage = ?',
+            [req.query.id],
+            function (err, rows, fields) {
+              if (err) throw err
+              res.json(rows)
+            },
+          )
     }
 }
