@@ -17,11 +17,11 @@ function App() {
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
-        <Route path="/missionAccueil" element={<MissionAccueil/>} />
+          <Route path="/missionAccueil" element={<MissionAccueil/>} />
           <Route path="/administration" element={<Admin />} />
           <Route path="/administration/accounts" element={<Accounts />} />
-        <Route path="/encyclopedie" element={<Encyclopedie/>}></Route> {/* route vers page encyclopedie */}
-        <Route path="/animal" element={<Animal/>}></Route> {/* route vers page animal */}
+          <Route path="/encyclopedie" element={<Encyclopedie/>}></Route> {/* route vers page encyclopedie */}
+          <Route path="/animal" element={<Animal/>}></Route> {/* route vers page animal */}
       </Routes>
     </BrowserRouter>
   );

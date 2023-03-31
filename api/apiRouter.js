@@ -1,8 +1,8 @@
 var express = require('express');
 var missions = require('./routes/missions');
 var user = require('./routes/user');
-var roles = require('./routes/roles')
-var sante = require('./routes/sante');
+var roles = require('./routes/roles');
+var encyclopedie = require('./routes/encyclopedie');
 
 exports.router = (function() {
     var apiRouter = express.Router();
