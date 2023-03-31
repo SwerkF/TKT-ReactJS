@@ -1,0 +1,70 @@
+
+
+.page-listemission {
+
+  background-image:url("https://www.emeraldpark.ie/wp-content/uploads/2023/01/donkey2-1920px.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  
+
+  .card{
+    background-color: orange;
+    
+  }
+  .title-Liste{
+    text-align: center;
+    color: brown;
+    text-decoration-line: underline;
+    
+  }
+  
+ 
+  .libelle{
+    text-align: left;
+    color: brown;
+  }
+  .form{
+    text-align:center;
+  }
+ 
+
+  
+ 
+}
+.page-ajoutmission{
+ text-align: center;
+  .libelle{
+    text-align: center;
+    color: white;
+  }
+  .title{
+    text-align: center;
+    text-decoration-line: underline;
+  }
+  .body-form{
+    background-color: orange;
+
+  }
+}
+.page-supmission {
+  background-image:url("https://www.emeraldpark.ie/wp-content/uploads/2023/01/donkey2-1920px.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  text-align: center;
+
+  .title-Liste{
+    text-align: center;
+    color: brown;
+    text-decoration-line: underline;
+
+  .body-form{
+    background-color: orange;
+  }
+    
+  }
+  
+}

@@ -15,10 +15,23 @@ module.exports = {
      insertAlert: function(req, res){
       console.log(req.body)
       let libelle = req.body.libelleAlert;
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+      let date = req.body.date;
+      let idEtat = req.body.idEtatAlerte;
+      let idNiveau = req.body.idNiveauAlert;
+      db.query("INSERT INTO alert(libelleAlert, date,idEtatAlerte,idNiveauAlert)  VALUES(?,?,?,?) ",[libelle, date, idEtat, idNiveau],function(err,result){
+=======
+>>>>>>> Stashed changes
       let date = req.body.dateAlert;
       let idEtat = req.body.idEtatAlerte;
       let idNiveau = req.body.idNiveauAlert;
       db.query("INSERT INTO alert(libelleAlert, dateAlert,idEtatAlerte,idNiveauAlert)  VALUES(?,?,?,?,?) ",[libelle, date, idEtat, idNiveau],function(err,result){
+<<<<<<< Updated upstream
+=======
+>>>>>>> feature-avertissement
+>>>>>>> Stashed changes
            if(err){
             res.json({ message: "Echec de l'ajout du nouvel avertissement",
            data:result});

@@ -19,7 +19,15 @@ exports.router = (function() {
      //Advert
     apiRouter.route('/avertissements/listeAlert').get(avertissement.getAvertissement);
     apiRouter.route('/avertissements/insert').post(avertissement.insertAlert);
+<<<<<<< Updated upstream
     apiRouter.route('/avertissements/delete').post(avertissement.deleteAlert);
+=======
+<<<<<<< HEAD
+    apiRouter.route('/avertissements/formdelete').post(avertissement.deleteAlert);
+=======
+    apiRouter.route('/avertissements/delete').post(avertissement.deleteAlert);
+>>>>>>> feature-avertissement
+>>>>>>> Stashed changes
 
     return apiRouter;
 })();

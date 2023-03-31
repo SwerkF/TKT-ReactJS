@@ -20,10 +20,12 @@ const FormulaireAjout=()=>{
         })
     }
         //affichage
-    return(<div>
-        <h1>Veuillez remplir les champs suivants </h1>
+    return(<div className="page-listemission">
+        <div className="container">
         <FormAjoutMission Add={Add}></FormAjoutMission>
-        <a href="/liste">Retour à la liste des missions</a>
+        </div>
+        
+        
         </div>);
         
     }
