@@ -6,44 +6,49 @@ import './CardAnimal.scss'
 
 const CardAcceuil = (props) => {
 
-    let [sante, setSante] = useState([]);
+    let [sante, setSante] = useState(props.sante)
 
-    let handleChangeSante = (e) => {
+    const handleChangeSante = (e) => {
         e.preventDefault();
-        let idSante = e.target.value;
-        axios.get('http://localhost:3300/api/animals/update/sante', {
-            params: {
+        const idSante = e.target.value;
+        const confirmed = window.confirm(
+          "Êtes-vous sûr de vouloir modifier la santé de cet animal ?"
+        );
+        if (confirmed) {
+          axios
+            .get("http://localhost:3300/api/animals/update/sante", {
+              params: {
                 idAnimal: props.idAnimal,
-                idSante: idSante
-            }
-        })
-        .then(function (response) {
-            if(response.status === 200) {
-                toast.success('Modification effectuée avec succès!', {
-                    position: "bottom-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                    });
-            } else {
-                toast.error('Erreur lors de la modification', {
-                    position: "bottom-center",
-                    autoClose: 5000,
-                    hideProgressBar: false,
-                    closeOnClick: true,
-                    pauseOnHover: true,
-                    draggable: true,
-                    progress: undefined,
-                    theme: "light",
-                    });
-            }
-        })
-        .catch(function (error) {
-            toast.error('Erreur lors de la modification', {
+                idSante: idSante,
+              },
+            })
+            .then(function (response) {
+              if (response.status === 200) {
+                toast.success("Modification effectuée avec succès!", {
+                  position: "bottom-center",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "light",
+                });
+              } else {
+                toast.error("Erreur lors de la modification", {
+                  position: "bottom-center",
+                  autoClose: 5000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  theme: "light",
+                });
+              }
+            })
+            .catch(function (error) {
+              toast.error("Erreur lors de la modification", {
                 position: "bottom-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -52,9 +57,10 @@ const CardAcceuil = (props) => {
                 draggable: true,
                 progress: undefined,
                 theme: "light",
-                });
-        })
-    }
+              });
+            });
+        }
+      };
 
     return (
         <div className="comp-animals mt-5">
@@ -67,9 +73,9 @@ const CardAcceuil = (props) => {
                         <p className="card-text card-poids-animals mt-n3">Race: {props.race}</p>
                         <p className="card-text card-poids-animals mt-n3">Poids: {props.poids} kg</p>
                         <p className="card-text card-sante-animals mt-n3">Enclos: {props.enclos}</p>
-                        <p className="mt-n3">Santé</p>
-                        <select className="form-control mt-n3" onChange={handleChangeSante} value={props.idSanteAnimal}>
-                            {props.sante.map((item, index) => {
+                        <p className="card-text mt-n3">Santé</p>
+                        <select className="form-control mt-n3 select-sante" onChange={handleChangeSante} value={props.idSanteAnimal}>
+                            {sante.map((item, index) => {
                                 return (
                                     <option
                                         key={item.idSante}
