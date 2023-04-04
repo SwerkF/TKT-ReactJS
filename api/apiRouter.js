@@ -19,6 +19,8 @@ exports.router = (function() {
     apiRouter.route('/missions/user/done/').get(missions.getMissionsByUserDone);
     apiRouter.route('/user/delete').post(user.userDelete);
     apiRouter.route('/encyclopedie/').get(encyclopedie.getEncyclopedie);
+    apiRouter.route('/encyclopedie/animal/').get(encyclopedie.getAnimalById);
+    apiRouter.route('/encyclopedie/imageAnimal/').get(encyclopedie.getImageAnimalById);
 
     apiRouter.route('/sante/get').get(sante.getSante);
 
