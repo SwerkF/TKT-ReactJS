@@ -15,8 +15,8 @@ exports.router = (function() {
     apiRouter.route('/user/get').get(user.getAccounts);
     apiRouter.route('/user/add').post(user.addAccount);
     apiRouter.route('/roles/get').get(roles.getRoles);
-  apiRouter.route('/missions/user/').get(missions.getMissionsByUser);
-  apiRouter.route('/missions/user/done/').get(missions.getMissionsByUserDone);
+    apiRouter.route('/missions/user/').get(missions.getMissionsByUser);
+    apiRouter.route('/missions/user/done/').get(missions.getMissionsByUserDone);
     apiRouter.route('/user/delete').post(user.userDelete);
     apiRouter.route('/encyclopedie/').get(encyclopedie.getEncyclopedie);
 
@@ -24,6 +24,7 @@ exports.router = (function() {
 
     apiRouter.route('/animals/get').get(animals.getAnimalsWithSante);
     apiRouter.route('/animals/update/sante').get(animals.updateSanteAnimal);
+    apiRouter.route('/sante/get/name').get(sante.getSanteByName);
     
 
     return apiRouter;
