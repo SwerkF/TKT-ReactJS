@@ -20,7 +20,6 @@ module.exports = {
     },
 
     getImageAnimalById: function(req, res) {
-        console.log('getImageAnimalById')
         db.query(
             'SELECT idImage, libelleImage FROM image WHERE idRaceImage = ?',
             [req.query.id],
