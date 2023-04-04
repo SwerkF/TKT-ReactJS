@@ -7,8 +7,10 @@ import Admin from './pages/Admin'
 import Accounts from './pages/Accounts'
 import Animals from './pages/Animals'
 import MissionAccueil from './pages/MissionAccueil';
+import Encyclopedie from './pages/Encyclopedie';
+import Animal from './pages/Animal';
 import Loader from './components/Loader';
-import {useState, useEffect} from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
 
@@ -25,16 +27,17 @@ function App() {
   }, []);
 
   return (
-      
       <BrowserRouter>
       {loading && <Loader />}
         <Nav />
         <Routes>
           <Route path="/" element={<Login />} />
           <Route path="/home" element={<Home />} />
-        <Route path="/missionAccueil" element={<MissionAccueil/>} />
+          <Route path="/missionAccueil" element={<MissionAccueil/>} />
           <Route path="/administration" element={<Admin />} />
           <Route path="/administration/accounts" element={<Accounts />} />
+          <Route path="/encyclopedie" element={<Encyclopedie/>}></Route> {/* route vers page encyclopedie */}
+          <Route path="/animal" element={<Animal/>}></Route> {/* route vers page animal */}
           <Route path="/administration/animals" element={<Animals />} />
         </Routes>
       </BrowserRouter>

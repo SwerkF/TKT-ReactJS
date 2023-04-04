@@ -1,0 +1,141 @@
+.page-encyclopedie{
+
+    background-image: url("http://localhost:3300/api/src/images/fond-encyclopedie.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;    
+    
+    .titre_ency {
+        color : white;
+        -webkit-text-stroke: 0.02em #FFB349;
+        text-align: center;
+        font-size: 6em;
+        padding-top: 3.5em;
+    }
+    
+    .liste_ani {
+        color : white;
+        text-align: center;
+        font-size: 4em;
+        margin-bottom: 7em;
+    }
+    
+    hr{
+        border: 0.3em solid #FFB349;
+    }
+    
+    .container {
+        max-width: 1780px !important;   /* largeur maximale de la page */
+        padding-bottom: 5em;
+    }
+    
+    div.img_animal{
+        background-color: #FFB349;
+        border-bottom-right-radius: 1em 1em;
+        border-bottom-left-radius: 1em 1em;
+        display: grid;  /* mise en grille */
+        gap: 0.2em;   /* espace entre les colonnes */
+        grid-template-columns:33% 33% 33%;  /* 3 colonnes de même taille */
+    }
+    
+    div.filter_card{
+        background-color: #FFB349;
+        border-top-right-radius: 1em 1em;
+        border-top-left-radius: 1em 1em;
+        display: grid;  /* mise en grille */
+        gap: 0.5em;   /* espace entre les colonnes */
+    }
+    
+    img {
+        aspect-ratio: 3/2;
+        margin-top: 0.4em;
+        margin-bottom: 1.5em;
+        border: 0.3em solid white;
+    }
+    
+    .card:hover .image{
+        opacity: .3;
+        -webkit-transition: .3s ease-in-out;
+        transition: .3s ease-in-out;
+    }
+    .image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+      
+    .overlay {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        opacity: 0;
+        transition: .5s ease;
+    }
+      
+    .card:hover .overlay {
+        opacity: 1;
+    }
+      
+    .card {
+        background-color: transparent;
+        border: none;
+    }
+    
+    .text {
+        font-weight: bold;
+        color: #880000;
+        font-size: 3vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+    
+    .overlay{
+        opacity: 0;
+    }
+    
+    ul{
+        width: 100%;
+        display: flex;
+        margin-top: 1em;
+        box-sizing: border-box;
+        gap: 2em;
+    }
+    
+    ul li{
+        list-style: none;
+        background-color: #FFA000;
+        padding: 0.3em 0.5em;
+        margin: 0 0.4em;
+        cursor: pointer;
+        font-size: 1.2em;
+        color: #880000;
+        font-weight: bold;
+        border-radius: 0.4em;
+    }
+    
+    ul li.active{
+        background-color: #008854;
+        color: white;
+    }
+    
+    select{
+        background-color: #008854;
+        color: white;
+        font-weight: bold;
+        border-radius: 0.4em;
+        border: none;
+        margin-left: auto;
+        margin-right: 2.7em;
+        font-size: 1.2em;
+    }    
+}
