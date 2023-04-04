@@ -10,6 +10,7 @@ import MissionAccueil from './pages/MissionAccueil';
 import Encyclopedie from './pages/Encyclopedie';
 import Animal from './pages/Animal';
 import Loader from './components/Loader';
+import { useEffect, useState } from 'react';
 
 function App() {
 
