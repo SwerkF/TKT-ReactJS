@@ -7,45 +7,43 @@
     background-attachment: fixed;
     display: flex;
 
+
+
+
     .container {
         max-width: 1780px !important;
         margin-bottom: 50px;
     }
-    
+
     .card{
         margin-top: 10%;
         background-color: #FFB349;
         border-radius: 0.5em;
     
     }
-    
-    .bg-orange{
-        background-color: #FFB349;
-        border-radius: 1em;
-        
+    .text-40{
+        font-size: 20px;
     }
-    
-    .btn-valid{
+    .btn-valid-2{
         background-color: #008854;
         border-radius: 0.5em;
         color :white;
-        width: 70% !important;
+        width: 30% !important;
     }
     
-    .btn-danger{
+    .btn-danger-2{
         border-radius: 0.5em;
+        background-color: #dc3545;
         color :white;
-        width: 70% !important;
+        width: 30% !important;
     }
-    
-    .btn-commencer{
-        background-color: #008854;
+    .txt-area{
+        width: 100%;
+        height: 10em;
         border-radius: 0.5em;
-        color :white;
-        width: 70%;
+        border: 1px solid #FFB349;
     }
-hr{
-    margin-left: 2em !important;
-    margin-right: 2em !important;
-}
+    .remarque{
+        text-decoration: underline !important;
+    }
 }

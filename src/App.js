@@ -1,8 +1,8 @@
-import './App.scss';
-import { Routes, Route, BrowserRouter } from "react-router-dom";
-import Login from './pages/Login';
-import Home from './pages/Home';
-import Nav from './components/Nav';
+import './App.scss'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import Login from './pages/Login'
+import Home from './pages/Home'
+import Nav from './components/Nav'
 import Admin from './pages/Admin'
 import Accounts from './pages/Accounts'
 import Animals from './pages/Animals'
@@ -11,6 +11,7 @@ import Encyclopedie from './pages/Encyclopedie';
 import Animal from './pages/Animal';
 import Loader from './components/Loader';
 import Alert from './components/Alert';
+import Invalider from './pages/Invalider'
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path="/administration/accounts" element={<Accounts />} />
           <Route path="/encyclopedie" element={<Encyclopedie/>}></Route> {/* route vers page encyclopedie */}
           <Route path="/animal" element={<Animal/>}></Route> {/* route vers page animal */}
+        <Route path="/invalider" element={<Invalider />} />
           <Route path="/administration/animals" element={<Animals />} />
         </Routes>
         <Alert />
@@ -46,4 +48,4 @@ function App() {
   )
 }
 
-export default App;
+export default App

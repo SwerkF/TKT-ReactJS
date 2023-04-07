@@ -1,14 +1,14 @@
-var express = require('express');
-var missions = require('./routes/missions');
-var user = require('./routes/user');
+var express = require('express')
+var missions = require('./routes/missions')
+var user = require('./routes/user')
 var roles = require('./routes/roles')
 var sante = require('./routes/sante');
 var animals = require('./routes/animals');
 var encyclopedie = require('./routes/encyclopedie');
 var alert = require('./routes/alerts');
 
-exports.router = (function() {
-    var apiRouter = express.Router();
+exports.router = (function () {
+  var apiRouter = express.Router()
 
     apiRouter.route('/user/').post(user.getUser);
     apiRouter.route('/user/login').get(user.login);
@@ -21,6 +21,13 @@ exports.router = (function() {
     apiRouter.route('/encyclopedie/').get(encyclopedie.getEncyclopedie);
     apiRouter.route('/encyclopedie/animal/').get(encyclopedie.getAnimalById);
     apiRouter.route('/encyclopedie/imageAnimal/').get(encyclopedie.getImageAnimalById);
+
+  apiRouter.route('/roles/get').get(roles.getRoles)
+
+  apiRouter.route('/missions/etat/valid').get(missions.validMission)
+  apiRouter.route('/missions/etat/invalid/').get(missions.invalidMission)
+  apiRouter.route('/missions/etat/start/').get(missions.startMission)
+  apiRouter.route('/missions/user/getone').get(missions.getIdMission)
 
     apiRouter.route('/sante/get').get(sante.getSante);
 
