@@ -10,6 +10,7 @@ import MissionAccueil from './pages/MissionAccueil';
 import Encyclopedie from './pages/Encyclopedie';
 import Animal from './pages/Animal';
 import Loader from './components/Loader';
+import Alert from './components/Alert';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -40,6 +41,7 @@ function App() {
           <Route path="/animal" element={<Animal/>}></Route> {/* route vers page animal */}
           <Route path="/administration/animals" element={<Animals />} />
         </Routes>
+        <Alert />
       </BrowserRouter>
   )
 }

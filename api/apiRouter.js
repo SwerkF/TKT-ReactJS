@@ -5,12 +5,12 @@ var roles = require('./routes/roles')
 var sante = require('./routes/sante');
 var animals = require('./routes/animals');
 var encyclopedie = require('./routes/encyclopedie');
+var alert = require('./routes/alerts');
 
 exports.router = (function() {
     var apiRouter = express.Router();
 
     apiRouter.route('/user/').post(user.getUser);
-    apiRouter.route('/user/login').get(user.login);
     apiRouter.route('/user/login').get(user.login);
     apiRouter.route('/user/get').get(user.getAccounts);
     apiRouter.route('/user/add').post(user.addAccount);
@@ -27,6 +27,8 @@ exports.router = (function() {
     apiRouter.route('/animals/get').get(animals.getAnimalsWithSante);
     apiRouter.route('/animals/update/sante').get(animals.updateSanteAnimal);
     apiRouter.route('/sante/get/name').get(sante.getSanteByName);
+
+    apiRouter.route('/alerts/get').get(alert.getAlerts);
     
 
     return apiRouter;
