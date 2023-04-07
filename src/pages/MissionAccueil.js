@@ -7,20 +7,56 @@ const MissionAccueil = () => {
 
   const [data, setData] = useState([])
   const [data2, setData2] = useState([])
+  const [user] = useState(JSON.parse(localStorage.getItem('user')))
 
-  useEffect(() => {
+  let load = () => {
     axios
-      .get('http://localhost:3300/api/missions/user?id=2')
+      .get('http://localhost:3300/api/missions/user?id=' + user.idUser)
       .then((response) => {
         setData(response.data)
       })
 
     axios
-      .get('http://localhost:3300/api/missions/user/done?id=2')
+      .get('http://localhost:3300/api/missions/user/done?id=' + user.idUser)
+      .then((response) => {
+        setData2(response.data)
+      })
+  }
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3300/api/missions/user?id=' + user.idUser)
+      .then((response) => {
+        setData(response.data)
+      })
+
+    axios
+      .get('http://localhost:3300/api/missions/user/done?id=' + user.idUser)
       .then((response) => {
         setData2(response.data)
       })
   }, [])
+
+  const handleClickValider = (x) => {
+    console.log(x)
+    axios.get('http://localhost:3300/api/missions/etat/valid', {
+      params: {
+        id: x,
+      },
+    })
+    load()
+  }
+
+  const handleClickStart = (x) => {
+    console.log(x)
+    axios.get('http://localhost:3300/api/missions/etat/start', {
+      params: {
+        id: x,
+      },
+    })
+    load()
+  }
+
   return (
     <div className="page-mission">
       <div className="container">
@@ -40,12 +76,19 @@ const MissionAccueil = () => {
                   </div>
                   <div className="col col-lg-2">
                     <div className="col">
-                      <a href="#" className="btn btn-valid ">
+                      <a
+                        href="#"
+                        className="btn btn-valid "
+                        onClick={() => handleClickValider(item.idMission)}
+                      >
                         Valider
                       </a>
                     </div>
                     <div className="col">
-                      <a href="#" className="btn btn-danger mt-2">
+                      <a
+                        href={'Invalider?idMission=' + item.idMission}
+                        className="btn btn-danger mt-2"
+                      >
                         Invalider
                       </a>
                     </div>
@@ -54,7 +97,7 @@ const MissionAccueil = () => {
               </div>
             </div>
           ))}
-
+          <hr></hr>
           <h5 className="text-center card-title">A Faire</h5>
           {data2.map((item) => (
             <div className="card-body bg-orange ml-4 mr-4 mb-3">
@@ -68,7 +111,11 @@ const MissionAccueil = () => {
                 </div>
                 <div className="col col-lg-2">
                   <div className="col">
-                    <a href="#" className="btn btn-commencer mt-2">
+                    <a
+                      href="#"
+                      className="btn btn-commencer mt-2"
+                      onClick={() => handleClickStart(item.idMission)}
+                    >
                       Commencer
                     </a>
                   </div>
