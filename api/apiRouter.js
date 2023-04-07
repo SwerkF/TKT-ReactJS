@@ -13,21 +13,15 @@ exports.router = (function() {
     
     //Missions
     apiRouter.route('/missions/liste').get(Mission.getMission);
+    apiRouter.route('/missions/liste').get(Mission.getMissionByEtat);
     apiRouter.route('/missions/insert').post(Mission.insertMission);
-    apiRouter.route('/missions/suppression').post(Mission.deleteMission);
+    apiRouter.route('/missions/suppression').get(Mission.deleteMission);
 
      //Advert
     apiRouter.route('/avertissements/listeAlert').get(avertissement.getAvertissement);
     apiRouter.route('/avertissements/insert').post(avertissement.insertAlert);
-<<<<<<< Updated upstream
-    apiRouter.route('/avertissements/delete').post(avertissement.deleteAlert);
-=======
-<<<<<<< HEAD
-    apiRouter.route('/avertissements/formdelete').post(avertissement.deleteAlert);
-=======
-    apiRouter.route('/avertissements/delete').post(avertissement.deleteAlert);
->>>>>>> feature-avertissement
->>>>>>> Stashed changes
+    apiRouter.route('/avertissements/formDelete').get(avertissement.deleteAlert);
+
 
     return apiRouter;
 })();

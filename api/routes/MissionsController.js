@@ -29,19 +29,32 @@ module.exports = {
        }
   })     },
   deleteMission: function(req,res){
-    let idMission = req.body.idMission;
+    let idMission = req.query.id;
 
-  db.query("Delete * from  where idMission= ?",[idMission],function(err,result){
-       if(err){
-        res.json({ message: "Echec de la suppression de la mission",
-       data:result});
+  db.query("Delete from missions where idMission= ?",[idMission],function(err,result){
+       if(err){ throw err
        }
        else{
           res.json({message:"Suppression réalisée avec succés"});
        }
   }
 
-  )}}
+  )},
+  getMissionByEtat: function(req,res){
+    let idEtatMission = req.body.idEtatMission;
+
+  db.query("SELECT idMission, libelleMission,dateMission, commentaireMission, libelleEtat FROM missions  join etat on idEtat=idEtatMission where idEtatMission= ?",[idEtatMission],function(err,result){
+       if(err){
+      res.json({ message: "Aucune mission n'existe à cet état",
+       data:result});
+       }
+       else{
+          res.json({message:"Succés"});
+       }
+  }
+
+  )},
+}
   
  
     

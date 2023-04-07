@@ -35,7 +35,7 @@ const FormAjoutMission= ({Add}) => {
                 <h3 class="libelle">Type d'utilisateur:</h3>
                 <input  type="text"   name="idUserMission" placeholder="Type utilisateur"/>
                 <br /><br />
-                <button  class="btn btn-info" type="submit">Ajouter votre nouvelle mission</button>
+                <button  class="btn btn-success" type="submit">Ajouter votre nouvelle mission</button>
                 <br /> <br />
                 <a class="btn btn-danger" href="/liste">Retour à la liste des missions</a>
                 </div>

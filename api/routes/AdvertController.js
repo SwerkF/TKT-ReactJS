@@ -15,23 +15,13 @@ module.exports = {
      insertAlert: function(req, res){
       console.log(req.body)
       let libelle = req.body.libelleAlert;
-<<<<<<< Updated upstream
-=======
-<<<<<<< HEAD
+
       let date = req.body.date;
       let idEtat = req.body.idEtatAlerte;
       let idNiveau = req.body.idNiveauAlert;
       db.query("INSERT INTO alert(libelleAlert, date,idEtatAlerte,idNiveauAlert)  VALUES(?,?,?,?) ",[libelle, date, idEtat, idNiveau],function(err,result){
-=======
->>>>>>> Stashed changes
-      let date = req.body.dateAlert;
-      let idEtat = req.body.idEtatAlerte;
-      let idNiveau = req.body.idNiveauAlert;
-      db.query("INSERT INTO alert(libelleAlert, dateAlert,idEtatAlerte,idNiveauAlert)  VALUES(?,?,?,?,?) ",[libelle, date, idEtat, idNiveau],function(err,result){
-<<<<<<< Updated upstream
-=======
->>>>>>> feature-avertissement
->>>>>>> Stashed changes
+
+      
            if(err){
             res.json({ message: "Echec de l'ajout du nouvel avertissement",
            data:result});
@@ -39,14 +29,14 @@ module.exports = {
            else{
               res.json({message:"Ajout réalisé avec succés"});
            }
-      })     },
+      })    
+     },
       deleteAlert: function(req,res){
-        let idMission = req.body.idMission;
+        let idAlert= req.query.id;
     
-      db.query("Delete * from  where idAlert= ?",[idMission],function(err,result){
+      db.query("Delete from alert where idAlert= ?",[idAlert],function(err,result){
            if(err){
-            res.json({ message: "Echec de la suppression de l'avertissement",
-           data:result});
+           throw err
            }
            else{
               res.json({message:"Suppression réalisée avec succés"});
