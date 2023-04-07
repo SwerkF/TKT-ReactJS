@@ -23,6 +23,7 @@ app.get('/', function(req, res)  {
 })
 
 app.use('/api/', apiRouter);
+console.log(apiRouter)
 app.use('/api/src/images/', express.static('src/images'));
 
 app.listen(3300, function() {

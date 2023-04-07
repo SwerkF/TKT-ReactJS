@@ -11,9 +11,8 @@ module.exports = {
     },
 
     updateSanteAnimal: function (req, res) {
-        //get from get
-        db.query('UPDATE Animal SET idSanteAnimal = ? WHERE idAnimal = ?', [req.query.idSante, req.query.idAnimal ], function (err, result) {
-            if (err) throw err;
+    db.query('UPDATE Animal SET idSanteAnimal = ? WHERE idAnimal = ?', [req.query.idSante, req.query.idAnimal ], function (err, result) {
+        if (err) throw err;
             res.json({
                 data: result
             })
