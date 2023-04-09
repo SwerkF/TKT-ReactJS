@@ -16,14 +16,16 @@ const [avertissement, setAvertissement] = useState("");
             idEtatAlerte: idEtat ,
             idNiveauAlert: idNiveau
         }).then((rep) => {
+            document.location.href = "/listeAlert";
         })
     }
         //affichage
-    return(<div className="page-listeavertissements">
-    <div className="container">
-        <FormAjoutAlert Add={Add}></FormAjoutAlert>
+    return(
+    <div className="page-listeavertissements">
+        <div className="container">
+            <FormAjoutAlert Add={Add} className="mt-5"></FormAjoutAlert>
         </div>
-        </div>);
+    </div>);
         
     }
 

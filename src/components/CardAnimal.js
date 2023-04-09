@@ -6,7 +6,13 @@ import './CardAnimal.scss'
 
 const CardAcceuil = (props) => {
 
-    let [sante, setSante] = useState(props.sante)
+    let [sante, setSante] = useState([])
+
+    axios.get('http://localhost:3300/api/sante/get', {
+    })
+    .then(function (response) {
+        setSante(response.data.data);
+    })
 
     const handleChangeSante = (e) => {
         e.preventDefault();
@@ -24,7 +30,7 @@ const CardAcceuil = (props) => {
             })
             .then(function (response) {
               if (response.status === 200) {
-                toast.success("Modification effectuée avec succès!", {
+                toast.success("Modification effectuée avec succès! Elle sera prise en compte au rechargement de la page.", {
                   position: "bottom-center",
                   autoClose: 5000,
                   hideProgressBar: false,

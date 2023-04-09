@@ -1,19 +1,17 @@
+
+import { useEffect, useState } from 'react';
+import { BrowserRouter,Routes,Route } from "react-router-dom";
 import './App.scss'
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
+
 import Login from './pages/Login'
 import Home from './pages/Home'
-import Nav from './components/Nav'
 import Admin from './pages/Admin'
 import Accounts from './pages/Accounts'
 import Animals from './pages/Animals'
 import MissionAccueil from './pages/MissionAccueil';
 import Encyclopedie from './pages/Encyclopedie';
 import Animal from './pages/Animal';
-import Loader from './components/Loader';
-import Alert from './components/Alert';
 import Invalider from './pages/Invalider'
-import { useEffect, useState } from 'react';
-
 import Liste from "./pages/missions/liste";
 import Suppression from "./pages/missions/suppression";
 import FormulaireAjout from "./pages/missions/formulaireAjout";
@@ -21,8 +19,9 @@ import ListeAlert from "./pages/avertissements/listeAlert";
 import FormAjout from "./pages/avertissements/formAjout";
 import FormDelete from "./pages/avertissements/formDelete";
 
-import { BrowserRouter,Routes,Route } from "react-router-dom";
-
+import Nav from './components/Nav'
+import Loader from './components/Loader';
+import Alert from './components/Alert';
 
 function App() {
 
@@ -36,29 +35,30 @@ function App() {
     return () => {
       clearTimeout(timer);
     };
-  }, []);
+  },[]);
 
   return (
-  <BrowserRouter>
-      <BrowserRouter>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/missionAccueil" element={<MissionAccueil/>} />
-          <Route path="/administration" element={<Admin />} />
-          <Route path="/administration/accounts" element={<Accounts />} />
-          <Route path="/encyclopedie" element={<Encyclopedie/>}></Route> {/* route vers page encyclopedie */}
-          <Route path="/animal" element={<Animal/>}></Route> {/* route vers page animal */}
-        <Route path="/invalider" element={<Invalider />} />
-          <Route path="/administration/animals" element={<Animals />} />
-   <Route path="/liste" element={<Liste/>}></Route>
-   <Route path="/formulaire" element= {<FormulaireAjout/>}></Route>
-   <Route path="/suppression" element={<Suppression/>}></Route>
-   <Route path="/listeAlert" element={<ListeAlert/>}></Route>
-   <Route path="/formAjout" element= {<FormAjout/>}></Route>
-   <Route path="/formDelete" element={<FormDelete/>}></Route>
-   </Routes>
+    <BrowserRouter>
+      <Nav />
+      {loading && <Loader />}
+      <Routes>
+        <Route path="/" element={<Login />} /> {/* route vers page login */}
+        <Route path="/home" element={<Home />} /> {/* route vers page home */}
+        <Route path="/missionAccueil" element={<MissionAccueil/>} /> {/* route vers page missionAccueil */}
+        <Route path="/administration" element={<Admin />} /> {/* route vers page admin */}
+        <Route path="/administration/accounts" element={<Accounts />} /> {/* route vers page comptes */}
+        <Route path="/encyclopedie" element={<Encyclopedie/>}></Route> {/* route vers page encyclopedie */}
+        <Route path="/animal" element={<Animal/>}></Route> {/* route vers page animal */}
+        <Route path="/invalider" element={<Invalider />} /> {/* route vers page invalider une mission */}
+        <Route path="/administration/animals" element={<Animals />} /> {/* route vers page animaux */}
+        <Route path="/administration/missions" element={<Liste/>}></Route> {/* route vers page liste */}
+        <Route path="/formulaire" element= {<FormulaireAjout/>}></Route> {/* route vers page formulaire */}
+        <Route path="/suppression" element={<Suppression/>}></Route> {/* route vers page suppression */}
+        <Route path="/listeAlert" element={<ListeAlert/>}></Route> {/* route vers page liste */}
+        <Route path="/formAjout" element= {<FormAjout/>}></Route> {/* route vers page formulaire */}
+        <Route path="/formDelete" element={<FormDelete/>}></Route> {/* route vers page suppression */}
+      </Routes>
+      <Alert />
   </BrowserRouter>
   );
 }

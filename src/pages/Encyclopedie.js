@@ -47,7 +47,7 @@ const Encyclopedie = () => {
 
                 //filtre
                 let filter = li.textContent;
-                console.log(filter);
+                //console.log((filter);
                 let array = [];
                 data2.forEach((item) => {
                 if(item.libelle === filter){

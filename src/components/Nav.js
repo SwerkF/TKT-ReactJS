@@ -46,12 +46,19 @@ const Nav = (props) => {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="/alertes">
+                <a className="nav-link" href="/listeAlert">
                   Alertes
                 </a>
               </li>
+              {user.libelleRole === 'admin' ? (
+                <li className="nav-item">
+                  <a className="nav-link" href='/administration'>
+                    Administration
+                  </a>
+              </li>
+              ) : null}
               <li className="nav-item">
-                <a className="nav-link" href="/alertes">
+                <a className="nav-link">
                   {user.nomUser} {user.prenomUser}
                 </a>
               </li>

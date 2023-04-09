@@ -16,22 +16,22 @@ const liste=()=>{
       },[]);  
     
     const deleteMission = (idMission) => {
-      console.log(idMission)
+      //console.log((idMission)
       axios.get('http://localhost:3300/api/missions/suppression', {
           params: {
             id: idMission
           },
       }).then((rep) => {
-        console.log(rep)
+        //console.log((rep)
       })
       .then((err) => {
-        console.log(err)
+        //console.log((err)
       }) 
   }
  
     const handleChangefilter = (e) =>{
 
-      console.log(backup)
+      //console.log((backup)
       let libelleEtat = e.target.value;
 
       if(libelleEtat == "Tous") {
@@ -50,10 +50,10 @@ const liste=()=>{
             <h1 class="title-Liste">Veuillez consulter la liste des missions </h1>
             <select onChange={handleChangefilter} >
               <option value="Tous" selected="selected">Tous</option>
-              <option value="Pas commencé">Pas commencé</option>
+              <option value="A faire">A faire</option>
               <option value="En cours">En cours</option>
-              <option value="Terminé">Terminé</option>
-              
+              <option value="Terminée">Terminée</option>
+              <option value="Non réalisée">Non réalisée</option>
             </select>
             <div className="container">
             <div className="col">

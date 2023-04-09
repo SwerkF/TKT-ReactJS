@@ -13,7 +13,7 @@ module.exports = {
      
      
      insertAlert: function(req, res){
-      console.log(req.body)
+      //console.log((req.body)
       let libelle = req.body.libelleAlert;
 
       let date = req.body.date;

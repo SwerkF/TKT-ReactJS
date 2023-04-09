@@ -9,21 +9,12 @@ const Animals = (props) => {
     let [sante, setSante] = useState([]);
 
     useEffect(() => {
-        load();
-        axios.get('http://localhost:3300/api/sante/get', {
-        })
-        .then(function (response) {
-            setSante(response.data.data);
-        })
-    },[])
-
-    let load = () => {
         axios.get('http://localhost:3300/api/animals/get', {
         })
         .then(function (response) {
             setAnimals(response.data.data);
         })
-    }
+    },[])
 
     return (
         <div className="page-animals pt-5">

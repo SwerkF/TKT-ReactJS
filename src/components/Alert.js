@@ -8,7 +8,7 @@ const Alert = (props) => {
     let [display, setDisplay] = useState([])
     let [alertes, setAlertes] = useState([]);
 
-    console.log(alertes)
+    //console.log((alertes)
     const handleChange = () => {
         if (display == "none") {
             setDisplay("block");
@@ -26,13 +26,14 @@ const Alert = (props) => {
             setAlertes(response.data.data);
         })
         .catch(function (error) {
-            console.log(error);
+            //console.log((error);
         })
     },[])
 
     return (
         <div className="alerts">
             <div className="alert-button">
+                <div className="alert-number text-center"><p>{alertes.length}</p></div>
                 <a className="btn" onClick={handleChange}>!</a>
             </div>
             <div id="popup" style={{display: {display}}} className="popup">

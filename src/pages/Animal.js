@@ -8,7 +8,7 @@ const Animal = () => {
   const [data2, setData2] = useState([]);
 
   useEffect(() => {
-    console.log(data2);
+    //console.log((data2);
     axios
       .get("http://localhost:3300/api/encyclopedie/animal?id=" + animal)
       .then((response) => {
