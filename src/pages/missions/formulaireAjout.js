@@ -17,12 +17,13 @@ const FormulaireAjout=()=>{
             idEtatMission: idEtatMission ,
             idUserMission: idUser
         }).then((rep) => {
+            document.location.href = "/liste";
         })
     }
         //affichage
     return(<div className="page-listemission">
         <div className="container">
-        <FormAjoutMission Add={Add}></FormAjoutMission>
+            <FormAjoutMission Add={Add}></FormAjoutMission>
         </div>
         
         

@@ -13,7 +13,7 @@ module.exports = {
  
  
  insertMission: function(req, res){
-  console.log(req.body)
+  //console.log((req.body)
   let libelle = req.body.libelleMission;
   let commentaire = req.body.commentaireMission;
   let date = req.body.dateMission;

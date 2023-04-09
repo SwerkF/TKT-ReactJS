@@ -23,9 +23,9 @@ app.get('/', function(req, res)  {
 })
 
 app.use('/api/', apiRouter);
-console.log(apiRouter)
+//console.log((apiRouter)
 app.use('/api/src/images/', express.static('src/images'));
 
 app.listen(3300, function() {
-    console.log('Serveur lancé sur le port 3000');
+    //console.log(('Serveur lancé sur le port 3000');
 })

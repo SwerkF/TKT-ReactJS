@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
 
 const LoginForm = (props) => {
 
@@ -25,11 +26,32 @@ const LoginForm = (props) => {
                     localStorage.setItem('user', JSON.stringify(res.data.data));
                     //redirect to home
                     window.location.href = "/home";
+                } else {
+                    toast.error('Echec lors du login.', {
+                        position: "bottom-center",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light",
+                        });
                 }
             }
         })
         .catch((err) => {
-            console.log(err)
+            //console.log((err)
+            toast.error('Echec lors du login.', {
+                position: "bottom-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+                });
         })
     }
 
@@ -38,7 +60,7 @@ const LoginForm = (props) => {
             ...credentials,
             login: e.target.value
         })
-        console.log(credentials)
+        //console.log((credentials)
     }
 
     let handleChangePassword = (e) => {
@@ -46,11 +68,12 @@ const LoginForm = (props) => {
             ...credentials,
             password: e.target.value
         })
-        console.log(credentials)
+        //console.log((credentials)
     }
 
     return (
         <div className="card-body">
+            <ToastContainer position="bottom-center" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light"/>
             <div className="d-flex flex-column flex-cred mt-4">
                 <label for="login" className="label">Identifiant</label>
                 <input type="text" name="login" id="login" className="input" value={credentials.login} onChange={handleChangeLogin} required></input>

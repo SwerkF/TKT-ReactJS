@@ -5,7 +5,7 @@ import './Invalider.scss'
 const Invalider = () => {
   const [data, setData] = useState([])
   let idMission = window.location.href.split('=')[1] // récupère le nom de l'animal dans l'url */
-  console.log(idMission)
+  //console.log((idMission)
   useEffect(() => {
     axios
       .get('http://localhost:3300/api/missions/user/getone', {
@@ -15,12 +15,12 @@ const Invalider = () => {
       })
       .then((response) => {
         setData(response.data[0])
-        console.log(response)
+        //console.log((response)
       })
   }, [])
 
   const handleClickInvalider = (x) => {
-    console.log(x)
+    //console.log((x)
     let text = document.querySelector('.txt-area').value
     axios.get('http://localhost:3300/api/missions/etat/invalid', {
       params: {
@@ -28,7 +28,7 @@ const Invalider = () => {
         remarque: text.replace(/'/g, "''"),
       },
     })
-    window.location.href = '/home'
+    window.location.href = '/missionAccueil'
   }
 
   return (

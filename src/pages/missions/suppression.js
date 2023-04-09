@@ -14,10 +14,10 @@ const suppression=()=>{
 
 
         }).then((rep) => {
-            console.log(rep)
+            //console.log((rep)
         })
         .catch((err) => {
-            console.log(err)
+            //console.log((err)
         })
     }
     

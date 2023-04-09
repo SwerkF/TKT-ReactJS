@@ -27,9 +27,9 @@ const FormAjoutAlert= ({Add}) => {
                 <h3 class="libelle">Date:</h3>
                 <input type="date"   name="date" placeholder="Date du  nouvel avertissement" />
                 <h3 class="libelle">Etat:</h3>
-                <input type="text"   name="idEtatAlerte" placeholder="Etat de l'alerte"/>
+                <input type="text"   name="idEtatAlerte" value="1" placeholder="1 ou 2"/>
                 <h3 class="libelle">Niveau:</h3>
-                <input type="text"   name="idNiveauAlert" placeholder="Niveau de l'avertissement"/>
+                <input type="text"   name="idNiveauAlert" placeholder="(1, 2, 3 ou 4)"/>
                 <br /><br />
                 <button class="btn btn-success" type="submit">Ajouter votre nouvel avertissement</button>
                 <br /><br />

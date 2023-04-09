@@ -38,7 +38,7 @@ const MissionAccueil = () => {
   }, [])
 
   const handleClickValider = (x) => {
-    console.log(x)
+    //console.log((x)
     axios.get('http://localhost:3300/api/missions/etat/valid', {
       params: {
         id: x,
@@ -48,7 +48,7 @@ const MissionAccueil = () => {
   }
 
   const handleClickStart = (x) => {
-    console.log(x)
+    //console.log((x)
     axios.get('http://localhost:3300/api/missions/etat/start', {
       params: {
         id: x,

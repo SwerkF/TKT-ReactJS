@@ -14,4 +14,11 @@
         top: 0;
         width: 100%;
     }
+
+    //media
+    @media (max-width: 1023px) {
+        .navbar.text-brown a{
+            font-size: 13px;
+        }
+    }
 }

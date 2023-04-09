@@ -2,7 +2,7 @@ const db = require('../bdd.js')
 
 module.exports = {
   getMissionsByUser: function (req, res) {
-    console.log('getMissionsByUser: ' + req.params.id)
+    //console.log(('getMissionsByUser: ' + req.params.id)
     db.query(
       'SELECT idMission,libelleMission, commentaireMission, dateMission, idEtatMission, idUserMission FROM missions WHERE idUserMission = ? AND idEtatMission = "2"',
       [req.query.id],
@@ -13,7 +13,7 @@ module.exports = {
     )
   },
   getMissionsByUserDone: function (req, res) {
-    console.log('getMissionsByUserDone: ' + req.params.id)
+    //console.log(('getMissionsByUserDone: ' + req.params.id)
     db.query(
       'SELECT idMission,libelleMission, commentaireMission, dateMission, idEtatMission, idUserMission FROM missions WHERE idUserMission = ? AND idEtatMission = "1"',
       [req.query.id],
@@ -25,7 +25,7 @@ module.exports = {
   },
   validMission: function (req, res) {
     let id = req.query.id
-    console.log(id)
+    //console.log((id)
     db.query(
       "update missions set idEtatMission ='3' where idMission = ?",
       [req.query.id],
@@ -36,7 +36,7 @@ module.exports = {
     )
   },
   invalidMission: function (req, res) {
-    console.log('getEtatMission: ' + req.params.id)
+    //console.log(('getEtatMission: ' + req.params.id)
     db.query(
       "update missions set idEtatMission ='4', remarqueMission = ? where idMission = ?",
       [req.query.remarque, req.query.id],
@@ -47,7 +47,7 @@ module.exports = {
     )
   },
   startMission: function (req, res) {
-    console.log('getEtatMission: ' + req.params.id)
+    //console.log(('getEtatMission: ' + req.params.id)
     db.query(
       "update missions set idEtatMission ='2' where idMission = ?",
       [req.query.id],
@@ -58,7 +58,7 @@ module.exports = {
     )
   },
   getIdMission: function (req, res) {
-    console.log('getIdMission: ' + req.query.id)
+    //console.log(('getIdMission: ' + req.query.id)
 
     db.query(
       'SELECT idMission, libelleMission, commentaireMission FROM missions WHERE idMission = ?',
