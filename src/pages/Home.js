@@ -3,7 +3,10 @@ import './Home.scss'
 import CardAcceuil from '../components/CardAccueil'
 
 const Home = (props) => {
+  
+  // On initialise la variable admin à rien
   let admin = <></>
+  // Si l'utilisateur est un admin, on affiche le bouton d'administration
   if (JSON.parse(localStorage.getItem('user')).libelleRole === 'admin') {
     admin = (
       <CardAcceuil
@@ -14,6 +17,8 @@ const Home = (props) => {
       />
     )
   }
+
+  // Si l'utilisateur n'est pas connecté, on le redirige vers la page de connexion
   useEffect(() => {
     document.title = 'Accueil'
     if (!localStorage.getItem('user')) {
@@ -21,6 +26,7 @@ const Home = (props) => {
     }
   }, [])
 
+  // Afficher la page d'accueil
   return (
     <div className="page-home d-flex align-items-center">
       <div className="container">

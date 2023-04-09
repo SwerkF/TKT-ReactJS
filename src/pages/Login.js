@@ -5,6 +5,7 @@ import logo from '../logo.svg';
 
 const Login = (props) => {
 
+    // Redirection vers la page d'accueil si l'utilisateur est déjà connecté
     useEffect(() => {
         document.title = "Connexion";
         if(localStorage.getItem('user')) {
@@ -12,6 +13,7 @@ const Login = (props) => {
         }
     },[])
 
+    // Afficher la page de connexion
     return (
         <div className="page-login pt-5">
             <div className="container pt-5">

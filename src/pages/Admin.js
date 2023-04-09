@@ -3,13 +3,15 @@ import CardAccueil from '../components/CardAccueil';
 import './Admin.scss'
 const Admin = (props) => {
 
+    // Si l'utilisateur n'est pas connecté, on le redirige vers la page de connexion
     useEffect(() => {
         document.title = "Administration";
         if(!localStorage.getItem('user')) {
-           
-            
+            document.location.href = "/login";
         }
     })
+
+    // Afficher la page d'administration
     return (
         <div className="page-admin d-flex align-items-center">
             <div className="container">

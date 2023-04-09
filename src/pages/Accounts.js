@@ -9,31 +9,42 @@ const Accounts = (props) => {
     const [accounts, setAccounts] = useState([]);
     const [roles, setRoles] = useState([]);
 
+    //Fonction pour charger les comptes
     const handleLoad = () => {
+        //Récupérer les coomptes
         axios.get('http://localhost:3300/api/user/get', {
         })
         .then(function (response) {
+            //attribuer les comptes à la variable accounts
             setAccounts(response.data.data);
         })
 
     }
     useEffect(() => {
         document.title = "Gestion des comptes";
+
+        //Si l'utilisateur n'est pas un admin, on le redirige vers la page d'accueil
         if(JSON.parse(localStorage.getItem('user')).libelleRole !== "admin") {
             return window.location.href = "/home";
         }
 
+        //Récupérer les roles
         axios.get('http://localhost:3300/api/roles/get', {
         })
         .then(function (response) {
+            //attribuer les roles à la variable roles
             setRoles(response.data.data);
+
             handleLoad();
         })
 
     },[])
 
+    //Fonction pour ajouter un compte
     let handleSubmit = (e) => {
+        //Empêcher le rechargement de la page
         e.preventDefault();
+        //Ajouter le compte
         axios.post('http://localhost:3300/api/user/add', {
             nomUser: e.target.nom.value,
             prenomUser: e.target.prenom.value,
@@ -42,7 +53,9 @@ const Accounts = (props) => {
             idRole: e.target.role.value
         })
         .then(function (response) {
+            //Si l'ajout a été effectué avec succès
             if(response.status === 200) {
+                //Afficher un message de succès
                 toast.success('Ajout effectué avec succès!', {
                     position: "bottom-center",
                     autoClose: 5000,
@@ -53,10 +66,13 @@ const Accounts = (props) => {
                     progress: undefined,
                     theme: "light",
                     });
+                //Recharger les comptes
                 handleLoad();
             }
         })
+        //Si l'ajout a échoué
         .catch(function (error) {
+            //Afficher un message d'erreur
             toast.error('Erreur lors de l\'ajout', {
                 position: "bottom-center",
                 autoClose: 5000,
@@ -71,12 +87,16 @@ const Accounts = (props) => {
 
     } 
 
+    //Fonction pour supprimer un compte
     let handleDelete = (id) => {
+        //Supprimer le compte
         axios.post('http://localhost:3300/api/user/delete', {
             idUser: id
         })
         .then(function (response) {
+            //Si la suppression a été effectuée avec succès
             if(response.status === 200) {
+                //Afficher un message de succès
                 toast.success('Suppression effectuée avec succès!', {
                     position: "bottom-center",
                     autoClose: 5000,
@@ -90,6 +110,7 @@ const Accounts = (props) => {
                 handleLoad();
             }
         })
+        //Si la suppression a échoué
         .catch(function (error) {
             toast.error('Erreur lors de la suppression', {
                 position: "bottom-center",
@@ -104,6 +125,7 @@ const Accounts = (props) => {
         })
     }
    
+    //Afficher la page
     return (
         <div className="page-accounts">
             <ToastContainer position="bottom-center" autoClose={5000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light"/>
