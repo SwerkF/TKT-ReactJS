@@ -56,6 +56,8 @@ Installer les packages pour l'API\
   npm install
 ```
 
+La base de données se trouve dans `./api/bdd/zoo.sql`. Veuillez créer sur votre server, une base de données `zoo` et importer le fichier `zoo.sql`.
+
 Lancer le projet / api :
 ```
   npm start
