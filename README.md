@@ -36,21 +36,21 @@ Installer les packages pour React
   npm install
 ```
 
-Installer les packages pour l'API\
+Installer les packages pour l'API
 
-==========================
-* > Si votre API est dans le dossier TKT-React JS*
+|==========================
+|* > Si votre API est dans le dossier TKT-React JS*
 ```bash
   npm install
 ```
-==========================
-
-*> Si votre API est dans un autre dossier, rendez vous dans celui là*
+|==========================
+|
+|*> Si votre API est dans un autre dossier, rendez vous dans celui là*
 ```bash
   cd path/to/API
   npm install
 ```
-==========================
+|==========================
 
 Lancer le projet / api :
 ```
