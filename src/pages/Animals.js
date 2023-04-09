@@ -8,14 +8,17 @@ const Animals = (props) => {
     let [animals, setAnimals] = useState([]);
     let [sante, setSante] = useState([]);
 
+    //
     useEffect(() => {
         axios.get('http://localhost:3300/api/animals/get', {
         })
         .then(function (response) {
+            // Attribution des données à la variable "animals"
             setAnimals(response.data.data);
         })
     },[])
 
+    // Affichage des données
     return (
         <div className="page-animals pt-5">
             <div className="container">

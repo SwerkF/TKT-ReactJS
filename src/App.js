@@ -25,8 +25,10 @@ import Alert from './components/Alert';
 
 function App() {
 
+  // loader
   const [loading, setLoading] = useState(true);
 
+  // loader
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
@@ -39,7 +41,7 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Nav />
+      <Nav /> {/* navbar */}
       {loading && <Loader />}
       <Routes>
         <Route path="/" element={<Login />} /> {/* route vers page login */}
@@ -58,7 +60,7 @@ function App() {
         <Route path="/formAjout" element= {<FormAjout/>}></Route> {/* route vers page formulaire */}
         <Route path="/formDelete" element={<FormDelete/>}></Route> {/* route vers page suppression */}
       </Routes>
-      <Alert />
+      <Alert /> {/* alerte */}
   </BrowserRouter>
   );
 }

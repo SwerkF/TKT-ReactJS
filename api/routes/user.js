@@ -2,9 +2,8 @@ const db = require('../bdd.js');
 
 
 module.exports = {
-    getUser: function(req, res) {
 
-    },
+    // Login
     login: function(req, res) {
 
         
@@ -40,6 +39,7 @@ module.exports = {
         })
     },
 
+    // Recuperer les comptes
     getAccounts: function(req, res) {
         db.query('SELECT idUser, nomUser, prenomUser, libelleRole FROM user INNER JOIN role ON idRole = idRoleUser', function(err, result) {
             if(err) throw err;
@@ -49,6 +49,7 @@ module.exports = {
         })
     },
 
+    // Ajouter un compte
     addAccount: function(req, res) {
         let nom = req.body.nomUser;
         let prenom = req.body.prenomUser;
@@ -85,6 +86,8 @@ module.exports = {
             })
         })
     },
+
+    // supprimer un compte
     userDelete: function(req, res, next) {
         let idUser = req.body.idUser;
         if(idUser === "" || idUser === undefined) {

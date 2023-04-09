@@ -2,6 +2,8 @@ import React from 'react';
 import './CardAccueil.scss'
 
 const CardAcceuil = (props) => {
+
+    // Afficher du composant CardAccueil
     return (
         <div className="comp-accueil">
             <a className="a-accueil" href={props.link}>

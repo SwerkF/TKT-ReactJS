@@ -8,21 +8,25 @@ const Alert = (props) => {
     let [display, setDisplay] = useState([])
     let [alertes, setAlertes] = useState([]);
 
-    //console.log((alertes)
+    // Affichage des données
     const handleChange = () => {
+        // Si le popup est caché, on l'affiche
         if (display == "none") {
             setDisplay("block");
             document.getElementById("popup").style.display = "block"
         } else {
+            // Sinon, on le cache
             setDisplay("none");
             document.getElementById("popup").style.display = "none"
 
         }
     }
 
+    // Récupération des données
     useEffect(() => {
         axios.get("http://localhost:3300/api/alerts/get")
         .then(function (response) {
+            // Attribution des données à la variable "alertes"
             setAlertes(response.data.data);
         })
         .catch(function (error) {
@@ -30,6 +34,7 @@ const Alert = (props) => {
         })
     },[])
 
+    // Affichage du composant Alert
     return (
         <div className="alerts">
             <div className="alert-button">

@@ -27,6 +27,8 @@ const LoaderWrapper = styled.div`
 `;
 
 const Loader = () => {
+
+  // Afficher le composant Loader
   return (
     <LoaderWrapper delay={400}>
       <div className="loader"></div>

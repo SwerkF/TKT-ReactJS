@@ -4,9 +4,12 @@ import './Popus.scss'
 
 const Popup = (props) => {
 
+    // Initialisation des variables
     const [alertes, setAlertes] = useState([]);
     
+    // Récupération des données
     useEffect(() => {
+        // Récupération des données
         axios.get("http://localhost:3300/api/alerts/get")
         .then(function (response) {
             setAlertes(response.data.data);
@@ -16,6 +19,7 @@ const Popup = (props) => {
         })
     })
 
+    // Affichage du composant Popup
     return (
         <div className="popup">
             <div className="popup-inner">
