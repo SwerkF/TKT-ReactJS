@@ -26,6 +26,7 @@ Le project **TKT-ReactJS** est un projet réalisé en atelier professionnel. Il 
 Télécharger le projet git, de préférence sur votre serveur local (Xampp, Wamp, MAMP).
 La base de données se trouve dans `./api/bdd/zoo.sql`. Veuillez créer sur votre server, une base de données `zoo` et importer le fichier `zoo.sql`.
 
+### Installation des packages React  
 ```bash
   git clone https://github.com/SwerkF/TKT-ReactJS
   cd TKT-ReactJS
@@ -36,21 +37,18 @@ Installer les packages pour React
   npm install
 ```
 
-Installer les packages pour l'API
+### Installer les packages pour l'API
 
-|==========================
-|* > Si votre API est dans le dossier TKT-React JS*
+> Si votre API est dans le dossier TKT-React JS*
 ```bash
   npm install
 ```
-|==========================
-|
-|*> Si votre API est dans un autre dossier, rendez vous dans celui là*
+
+> Si votre API est dans un autre dossier, rendez vous dans celui là
 ```bash
   cd path/to/API
   npm install
 ```
-|==========================
 
 Lancer le projet / api :
 ```
