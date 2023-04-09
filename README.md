@@ -55,7 +55,7 @@ Lancer le projet / api :
   npm start
 ```
 
-## API Reference
+## API Reference 🧠
 
 Exemples de requête d'API :
 #### Retourner la liste des animaux du parc.
