@@ -61,11 +61,44 @@ Lancer le projet / api :
   npm start
 ```
 
-    
 ## API Reference
 
-#### *A venir*
+Exemples de requête d'API :
+#### Retourner la liste des animaux du parc.
+```http
+  GET /api/encyclopedie
+```
 
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| *null* | *null* | Aucun paramètre. |
+
+#### Retourner un animal
+
+```http
+  GET /api/encyclopedie/animal/${id}
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `id`      | `string` | **Required**. L'ID de l'animal |
+
+#### Inserer un avertissement.
+
+```http
+  POST /api/avertissement/insert
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `libelle`      | `string` | **Required**. Libelle de l'avertissement |
+| `date`      | `string` | **Required**. Date du début |
+| `niveau`      | `string` | **Required**. Etat (Default: 1) |
+| `niveau`      | `string` | **Required**. Niveau de l'avertissement |
+
+*ect...*
+
+Pour le reste de l'API, rendez vous dans `./api/apiRouter` et `./api/apiRouter/routes`
 
 ## Auteurs 👑
 
