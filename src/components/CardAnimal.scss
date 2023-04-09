@@ -1,0 +1,58 @@
+.comp-animals {
+    
+    .card-img-top {
+        max-height: 300px !important;
+        width: auto;
+        object-fit: cover;;
+        border-radius: 20px 20px 0 0;
+        transition: 0.2s;
+    }
+
+    .bg-dark-orange {
+        background-color: #FFA000;
+    }
+    
+    .card {
+        border: none;
+        border-radius: 20px 20px 20px 20px; ;
+        transition: 0.2s;
+    }
+    
+    .card-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: #704837;
+    }
+    
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+    
+    .card-body-20 {
+        min-height: 14em;
+    }
+    
+    .card-text {
+        font-size: 1.2rem;
+        font-weight: 400;
+        color: #704837;
+    }
+    
+    .a-accueil:hover {
+        text-decoration: none;
+    }
+
+    .select-sante {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #ca8000;
+        background-color: transparent;
+        color: #704837;
+        font-size: 1.2rem;
+        font-weight: 400;
+        cursor: pointer;
+        background-color: #ffa915;
+    }
+}
+

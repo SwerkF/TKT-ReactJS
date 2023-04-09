@@ -1,0 +1,15 @@
+.popup {
+    margin-top: 6%;
+    display: none;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 400px;
+    min-height: 200px;
+    max-height: 400px;
+    background-color: rgba(243, 243, 243, 0.9);
+    border-radius: 5px;
+    padding: 1em;
+    transition: 400ms ease-in-out;
+    
+}
