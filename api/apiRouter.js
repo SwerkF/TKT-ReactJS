@@ -18,9 +18,9 @@ exports.router = (function () {
 
     apiRouter.route('/roles/get').get(roles.getRoles);
     
-    apiRouter.route('/encyclopedie/').get(encyclopedie.getEncyclopedie);
-    apiRouter.route('/encyclopedie/animal/').get(encyclopedie.getAnimalById);
-    apiRouter.route('/encyclopedie/imageAnimal/').get(encyclopedie.getImageAnimalById);
+    apiRouter.route('/encyclopedie/').get(encyclopedie.getEncyclopedie);  // récupère les animaux de la base de données
+    apiRouter.route('/encyclopedie/animal/').get(encyclopedie.getAnimalById);   // récupère les informations de l'animal en paramètre
+    apiRouter.route('/encyclopedie/imageAnimal/').get(encyclopedie.getImageAnimalById);   // récupère les images associées à l'animal en paramètre
     
     apiRouter.route('/missions/user/').get(missions.getMissionsByUser);
     apiRouter.route('/missions/user/done/').get(missions.getMissionsByUserDone);
