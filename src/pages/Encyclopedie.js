@@ -3,26 +3,26 @@ import axios from 'axios';
 import './encyclopedie.scss';
 
 const Encyclopedie = () => {
-    const [data, setData] = useState([]);
+    const [data, setData] = useState([]);  //variable pour stocker les données
     const [data2, setData2] = useState([]);
 
     useEffect(() => {
         axios.get("http://localhost:3300/api/encyclopedie") /* lien pour récupérer valeur requête */
         .then((response) => {
-            setData(response.data);
+            setData(response.data);  //récupération des données
             setData2(response.data);
         })
     },[])
 
-    const handleChangeOrdre = (event) => {
+    const handleChangeOrdre = (event) => {  //fonction pour trier les animaux par ordre alphabétique
         let array = [];
-        if(event.target.value === "a_z"){
+        if(event.target.value === "a_z"){   //tri par ordre alphabétique
             data.forEach((item) => {
                 array.push(item);
             })
             array.sort((a, b) => (a.libelleRace > b.libelleRace) ? 1 : -1);
             setData(array);
-        }else if(event.target.value === "z_a"){
+        }else if(event.target.value === "z_a"){  //tri par ordre alphabétique inverse
             data.forEach((item) => {
                 array.push(item);
             })
@@ -31,7 +31,7 @@ const Encyclopedie = () => {
         }
     }
 
-    const liItem = document.querySelectorAll('ul li');
+    const liItem = document.querySelectorAll('ul li');  //récupération des liens de la liste de filtre
     const handleClickFiltre = (event) => {
         liItem.forEach(li => {
             li.onclick = function () {
@@ -84,7 +84,7 @@ const Encyclopedie = () => {
                             <div className="col-sm card" id={item.idRace} key={item.idRace} name={item.libelleRace}>
                                 <a href={"/animal?idRace="+item.idRace}><img className="image" id={item.libelleRace} src={"http://localhost:3300/api/src/images/"+item.libelleImage} name={item.libelle}></img>
                                     <div className='overlay'>
-                                        <div className="text">{item.libelleRace}</div>
+                                        <div className="text">{item.libelleRace}</div>  {/* nom de l'animal lors du survol de l'image */}
                                     </div>
                                 </a>
                             </div>
