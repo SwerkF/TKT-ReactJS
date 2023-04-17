@@ -10,12 +10,12 @@ const Animal = () => {
   useEffect(() => {
     //console.log((data2);
     axios
-      .get("http://localhost:3300/api/encyclopedie/animal?id=" + animal)
+      .get("http://localhost:3300/api/encyclopedie/animal?id=" + animal)  /* lien pour récupérer valeur requête (information animal GET)*/
       .then((response) => {
         setData(response.data);
       }),
       axios
-        .get("http://localhost:3300/api/encyclopedie/imageAnimal?id=" + animal)
+        .get("http://localhost:3300/api/encyclopedie/imageAnimal?id=" + animal)  /* lien pour récupérer valeur requête (image animal GET)*/
         .then((response) => {
           setData2(response.data);
         });
@@ -29,7 +29,7 @@ const Animal = () => {
             <img
               className="image"
               id={image.idImage}
-              src={"http://localhost:3300/api/src/images/" + image.libelleImage}
+              src={"http://localhost:3300/api/src/images/" + image.libelleImage}  /* récupère la première image de l'animal */
             ></img>
           );
         }
