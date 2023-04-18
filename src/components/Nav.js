@@ -1,53 +1,84 @@
-import React, {useState} from 'react';
-import './Nav.css';
-import logo from '../logo.svg';
+import React, { useState } from 'react'
+import './Nav.scss'
+import logo from '../logo.svg'
 
 const Nav = (props) => {
+  // Déclaration des variables
+  const [user] = useState(JSON.parse(localStorage.getItem('user')))
 
-    const [user] = useState(JSON.parse(localStorage.getItem('user')));
-    const handleLogout = () => {
-        localStorage.removeItem('user');
-    }
+  // Fonction de déconnexion
+  const handleLogout = () => {
+    localStorage.removeItem('user')
+  }
 
-    if(!localStorage.getItem('user')) {
-        return null;
-    } else {
-       
-        console.log(user)
-        return (
-            <div>
-                <nav class="navbar navbar-expand-sm navbar-dark bg-orange text-brown">
-                <a class="navbar-brand" href="/home"><img src={logo} alt="logo.png"></img></a>
-                <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                    aria-expanded="false" aria-label="Toggle navigation">X</button>
-                <div class="collapse navbar-collapse" id="collapsibleNavId">
-                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" href="/home">Accueil</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/encyclopedie">Encyclopédie</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/missions">Missions</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/alertes">Alertes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/alertes">{user.nomUser} {user.prenomUser}</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/" onClick={()=>handleLogout()}>Logout</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-            </div>
-            
-        );
-    }
-    
-};
+  // Afficher la barre de navigation
+  if (!localStorage.getItem('user')) {
+    // Si l'utilisateur n'est pas connecté, on affiche la barre de navigation de la page de connexion
+    return null
+  } else {
+    // Si l'utilisateur est connecté, on affiche la barre de navigation de la page d'accueil
+    return (
+      <div className="comp-nav">
+        <nav className="navbar navbar-expand-sm navbar-dark bg-orange text-brown">
+          <a className="navbar-brand" href="/home">
+            <img src={logo} alt="logo.png"></img>
+          </a>
+          <button
+            className="navbar-toggler d-lg-none"
+            type="button"
+            data-toggle="collapse"
+            data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            X
+          </button>
+          <div className="collapse navbar-collapse" id="collapsibleNavId">
+            <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
+              <li className="nav-item">
+                <a className="nav-link" href="/home">
+                  Accueil
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/encyclopedie">
+                  Encyclopédie
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/missionAccueil">
+                  Missions
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/listeAlert">
+                  Alertes
+                </a>
+              </li>
+              {user.libelleRole === 'admin' ? (
+                <li className="nav-item">
+                  <a className="nav-link" href='/administration'>
+                    Administration
+                  </a>
+              </li>
+              ) : null}
+              <li className="nav-item">
+                <a className="nav-link">
+                  {user.nomUser} {user.prenomUser}
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/" onClick={() => handleLogout()}>
+                  Logout
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    )
+  }
+}
 
-export default Nav;
+export default Nav

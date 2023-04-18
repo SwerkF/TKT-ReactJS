@@ -1,0 +1,70 @@
+.page-animal{
+    background-color: #FFB349;
+    display: grid;
+
+    img{
+        width: 100%;
+    }
+
+    h1{
+        color: #880000;
+        margin-top: 0.5em;
+        margin-bottom: 0em;
+        font-size: 3em;
+        font-weight: bold;
+    }
+    
+    h2{
+        margin-top: 0.3em;
+        margin-bottom: 0.3em;
+        text-align: center;
+        color: #880000;
+        font-weight: bold;
+        text-decoration: underline;
+    }
+
+    p{
+        font-size: 1.3em;
+        margin-left: 1.5em;
+        margin-right: 1.5em;
+    }
+
+    .card-size {
+        height: 20em;
+        overflow-y: auto;
+    }
+
+    hr{
+        border: 0.2em solid #880000;
+        margin-left: 8em !important;
+        margin-right: 8em !important;
+    }
+
+    .card{
+        background-color: #FFA000;
+        border: none;
+        width: auto;
+        padding-bottom: 0.3em;
+        height: 20em !important;
+    }
+
+    .row{
+        margin-top: 1em;
+        margin-bottom: 2em;
+        padding-left: 6em;
+        padding-right: 6em;
+    }
+
+    .images{
+        width: 100%;
+        height: 100%;
+        border: 0.3em solid white;
+    }
+
+    .card-img{
+        background-color: #FFA000;
+        border: none;
+        width: auto;
+        padding-bottom: 0.6em;
+    }
+}
