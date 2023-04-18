@@ -17,7 +17,7 @@ const FormulaireAjout=()=>{
             idEtatMission: idEtatMission ,
             idUserMission: idUser
         }).then((rep) => {
-            document.location.href = "/liste";
+            document.location.href = "/administration/missions";
         })
     }
         //affichage
