@@ -59,9 +59,9 @@ Lancer le projet / api :
 
 Pour se connecter au site, utilisez les comptes suivant :
 
-Admin -> admin:admin123
-Vétérinaire -> veto:veto123
-Aide soignant -> soin:soin123
+- Admin -> admin:admin123
+- Vétérinaire -> veto:veto123
+- Aide soignant -> soin:soin123
 
 ## API Reference 🧠
 
