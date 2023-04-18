@@ -35,7 +35,7 @@ const FormAjoutMission= ({Add}) => {
                     <br /><br />
                     <button  class="btn btn-success" type="submit">Ajouter votre nouvelle mission</button>
                     <br /> <br />
-                    <a class="btn btn-danger" href="/liste">Retour à la liste des missions</a>
+                    <a class="btn btn-danger" href="/administation/missions">Retour à la liste des missions</a>
                     </div>
                 </div>
             </form>
