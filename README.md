@@ -23,6 +23,8 @@ Le project **TKT-ReactJS** est un projet réalisé en atelier professionnel. Il 
 
 ## Installation 💻
 
+Avant toute chose, pour utiliser l'API en local, il faut installer une extension [Cors Unblock](https://chrome.google.com/webstore/detail/cors-unblock/lfhmikememgdcahcdlaciloancbhjino). Malheuresement, la configuration du cors n'est pas faite pour cette API.
+
 Télécharger le projet git, de préférence sur votre serveur local (Xampp, Wamp, MAMP).
 La base de données se trouve dans `./api/bdd/zoo.sql`. Veuillez créer sur votre server, une base de données `zoo` et importer le fichier `zoo.sql`.
 
@@ -54,6 +56,12 @@ Lancer le projet / api :
 ```
   npm start
 ```
+
+Pour se connecter au site, utilisez les comptes suivant :
+
+Admin -> admin:admin123
+Vétérinaire -> veto:veto123
+Aide soignant -> soin:soin123
 
 ## API Reference 🧠
 
