@@ -13,7 +13,7 @@ const Home = (props) => {
         title="Administration"
         text="Panneau administratif pour du site. Ajoutez y des missions, contrôlez les alertes et bien plus encore."
         link="/administration"
-        src="https://www.wwf.org.au/images/carousel/3a413e04-d0d7-4df7-9d19-7b94b71b08f1_img-a-portrait-of-a-giant-panda-china-1000px.jpg"
+        src="https://t0.gstatic.com/licensed-image?q=tbn:ANd9GcQoSuF6yCAIiQj9ne8WfTzgjQNDBnPx5MdQ1wk5tDM4lI0NR_QeZJjNndV7TEtiSL_T"
       />
     )
   }
